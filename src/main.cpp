@@ -11,7 +11,7 @@ void setup() {
   dht.begin();
   delay(2000);
 
-  Serial1.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {
@@ -19,12 +19,12 @@ void loop() {
   float humidity = dht.readHumidity();
 
   digitalWrite(ledPin, HIGH);
-  Serial1.print("Temperature: ");
-  Serial1.print(temperature);
-  Serial1.print("°C");
-  Serial1.print(" Humidity: ");
-  Serial1.print(humidity);
-  Serial1.println("%");
+  Serial.print("Temperature: ");
+  Serial.print(temperature);
+  Serial.print("°C");
+  Serial.print(" Humidity: ");
+  Serial.print(humidity);
+  Serial.println("%");
   delay(1000);
   digitalWrite(ledPin, LOW);  
   delay(1000);
